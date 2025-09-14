@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio – Investigación de Operaciones (Unidad 1)</title>
+  <meta name="description" content="Resumen visual y animado de la Unidad 1: Investigación de Operaciones, Programación Lineal, Método Algebraico, Variables de Holgura y Método Simplex." />
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Favicons & PWA -->
+  <!-- Coloca los archivos dentro de /icons con estos nombres/tamaños -->
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
+  <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#7c5cff">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="msapplication-TileColor" content="#0b1020">
+  <meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="color-scheme" content="dark light">
+
+  <!-- SEO / Social Sharing -->
+  <meta property="og:title" content="Portafolio – Investigación de Operaciones (Unidad 1)">
+  <meta property="og:description" content="Resumen visual de la Unidad 1: PL, método algebraico y simplex, con ejemplos.">
+  <meta property="og:image" content="resources/og-image.png"><!-- 1200x630 recomendado -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CO">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- <link rel="canonical" href="https://TU-USUARIO.github.io/TU-REPO/">  Reemplaza cuando publiques -->
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="resources/logo.png">
+
+</head>
+<body>
+  <div class="orbs" aria-hidden="true">
+    <div class="orb orb--1"></div>
+    <div class="orb orb--2"></div>
+  </div>
+
+  <header class="hero" id="top">
+    <div class="container">
+      <div class="hero__badge">INSTITUCIÓN UNIVERSITARIA PASCUAL BRAVO · Portafolio Unidad 1</div>
+      <h1 class="hero__title">Investigación de Operaciones · Programación Lineal · Método Algebraico · Simplex</h1>
+      <p class="hero__desc lead">Resumen práctico con ejemplos, pasos de solución y una guía visual para recordar los conceptos clave. Incluye: abstracción de datos, formulación del modelo, variables de holgura, método algebraico y método simplex.</p>
+      <div class="hero__cta">
+        <a class="btn btn--pri" href="#intro">Ir a la introducción</a>
+        <a class="btn" href="#simplex">Ir a Simplex</a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Navegación por secciones">
+    <a href="#intro" title="Introducción"></a>
+    <a href="#pl" title="Programación Lineal"></a>
+    <a href="#modelo" title="Construcción del modelo"></a>
+    <a href="#algebraico" title="Método Algebraico"></a>
+    <a href="#simplex" title="Método Simplex"></a>
+    <a href="#ejercicios" title="Ejercicios"></a>
+    <a href="#conclusion" title="Conclusión"></a>
+  </nav>
+
+  <main>
+    <!-- Introducción -->
+    <section id="intro">
+      <div class="container">
+        <header class="section__header">
+          <p class="kicker">Unidad 1</p>
+          <h2 class="section__title">Introducción</h2>
+          <p class="section__desc prose">La <strong>investigación de operaciones</strong> aplica métodos analíticos y modelos matemáticos para apoyar decisiones óptimas en contextos reales. Se enfoca en usar mejor recursos limitados (tiempo, dinero, materiales) mediante la formulación y solución de problemas de optimización.</p>
+        </header>
+        <div class="grid grid--2">
+          <div class="card" style="animation-delay:.05s">
+            <h3>¿Qué resuelve?</h3>
+            <ul class="list--cols">
+              <li>Logística y cadenas de suministro</li>
+              <li>Producción y control de inventarios</li>
+              <li>Transporte y localización</li>
+              <li>Finanzas y portafolios</li>
+              <li>Salud y servicios</li>
+              <li>Telecomunicaciones y redes</li>
+            </ul>
+            <div class="divider"></div>
+            <p class="subtle">Herramientas: programación lineal, entera, no lineal; teoría de colas; simulación; grafos y redes.</p>
+          </div>
+          <div class="card" style="animation-delay:.12s">
+            <div class="placeholder">
+              <img class="img-fit" style="width:84%"  src="resources/introduccion.png" alt="Imagen alusiva a optimización o cadenas de suministro" loading="lazy" decoding="async"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programación Lineal -->
+    <section id="pl">
+      <div class="container">
+        <header class="section__header">
+          <p class="kicker">Fundamentos</p>
+          <h2 class="section__title">Programación Lineal</h2>
+          <p class="section__desc prose">La <strong>PL</strong> modela problemas con una función objetivo, variables de decisión y restricciones lineales. Permite elegir la mejor combinación de decisiones dentro de una región factible.</p>
+        </header>
+        <div class="grid grid--2">
+          <div class="card" style="animation-delay:.05s">
+            <h3>Estructura del modelo</h3>
+            <div class="code">Función Objetivo: Max/Min Z = c₁x₁ + c₂x₂ + ... + cₙxₙ
+Restricciones: aᵢ₁x₁ + aᵢ₂x₂ + ... + aᵢₙxₙ ≤/=/≥ bᵢ
+No negatividad: xⱼ ≥ 0</div>
+          </div>
+          <div class="card" style="animation-delay:.12s">
+            <h3>Áreas de aplicación</h3>
+            <ul class="list--cols">
+              <li>Planeación de producción</li>
+              <li>Mezcla de recursos</li>
+              <li>Asignación de personal</li>
+              <li>Ruteo y distribución</li>
+              <li>Presupuestos</li>
+              <li>Portafolios de inversión</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card card--narrow" style="animation-delay:.16s; margin-top:18px">
+            <h3>Actividad: Abstracción de datos</h3>
+            <p class="prose">Para pasar del texto del problema al modelo formal, usa esta plantilla en tu cuaderno:</p>
+            <div class="code">
+                Fo: &lt;Max/Min ...&gt;<br>
+                Var: &lt;definición de variables&gt;<br>
+                Res: &lt;listado de restricciones&gt;<br>
+                solución: &lt;valores óptimos e interpretación&gt;
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Construcción del modelo (Herrero) -->
+    <section id="modelo">
+      <div class="container">
+        <header class="section__header">
+          <p class="kicker">Modelado</p>
+          <h2 class="section__title">Ejemplo del herrero</h2>
+          <p class="section__desc prose">Con 80 kg de acero y 120 kg de aluminio se fabrican bicicletas de paseo (X₁) y de montaña (X₂). A continuación, la formulación.</p>
+        </header>
+        <div class="grid grid--2">
+          <div class="card" style="animation-delay:.05s">
+            <h3>Variables y objetivo</h3>
+            <div class="stepper">
+              <div class="step">
+                <div class="step__title">Variables</div>
+                <div class="code">X₁: # de bicicletas de paseo <br>
+X₂: # de bicicletas de montaña</div>
+              </div>
+              <div class="step">
+                <div class="step__title">Función objetivo (beneficio)</div>
+                <div class="code">Max Z = 20.000·X₁ + 15.000·X₂</div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="animation-delay:.12s">
+            <h3>Restricciones e interpretación</h3>
+            <div class="stepper">
+              <div class="step">
+                <div class="step__title">Restricciones</div>
+                <div class="code">
+                    Acero: 1·X₁ + 2·X₂ ≤ 80 <br>
+                    Aluminio: 3·X₁ + 2·X₂ ≤ 120 <br>
+                    No negatividad: X₁, X₂ ≥ 0
+                </div>
+              </div>
+              <div class="step">
+                <div class="step__title">Lectura</div>
+                <p class="subtle">La solución óptima indica cuántas unidades producir de cada tipo usando eficientemente los recursos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Método Algebraico + Holgura -->
+    <section id="algebraico">
+      <div class="container">
+        <header class="section__header">
+          <p class="kicker">Resolución</p>
+          <h2 class="section__title">Método algebraico y variables de holgura</h2>
+          <p class="section__desc prose">Para resolver por álgebra, llevamos las restricciones a igualdades agregando <strong>variables de holgura (sᵢ)</strong> que representan recursos sobrantes. Luego evaluamos la función objetivo en vértices.</p>
+        </header>
+        <div class="grid grid--2">
+          <div class="card" style="animation-delay:.05s">
+            <h3>Forma estándar</h3>
+            <div class="code">
+                1·X₁ + 2·X₂ + s₁ = 80 <br>
+                3·X₁ + 2·X₂ + s₂ = 120 <br> 
+                X₁, X₂, s₁, s₂ ≥ 0
+            </div>
+          </div>
+          <div class="card" style="animation-delay:.12s">
+            <h3>Interpretación de holguras</h3>
+            <p class="prose subtle">Si s₁ &gt; 0, sobró acero; si s₁ = 0, el acero es <em>recurso crítico</em>. Ayuda a identificar cuellos de botella.</p>
+                <div class="placeholder">
+                    <img class="img-fit" src="resources/holgura.png" alt="Imagen alusiva a optimización o cadenas de suministro" loading="lazy" decoding="async"/>
+                </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Método Simplex -->
+    <section id="simplex">
+      <div class="container">
+        <header class="section__header">
+          <p class="kicker">Algoritmo</p>
+          <h2 class="section__title">Método Simplex</h2>
+          <p class="section__desc prose">Procedimiento iterativo que recorre vértices de la región factible, mejorando Z hasta alcanzar el óptimo.</p>
+        </header>
+        <div class="card" style="animation-delay:.05s">
+          <div class="stepper">
+            <div class="step"><div class="step__title">1) Preparación</div><p class="subtle">Escribir el problema en forma estándar, agregar holguras y construir la tabla inicial.</p></div>
+            <div class="step"><div class="step__title">2) Variable de entrada</div><p class="subtle">Elegir la columna con mayor potencial de mejora (coeficiente más negativo en Z si maximizamos).</p></div>
+            <div class="step"><div class="step__title">3) Variable de salida</div><p class="subtle">Aplicar la <em>prueba de razón mínima</em> para mantener factibilidad.</p></div>
+            <div class="step"><div class="step__title">4) Pivoteo</div><p class="subtle">Normalizar la fila pivote y anular el resto de la columna. Repetir hasta que no haya mejoras.</p></div>
+            <div class="step"><div class="step__title">5) Lectura de solución</div><p class="subtle">Las variables básicas dan los valores óptimos; Z indica el valor máximo/mínimo alcanzado.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ejercicios con Tabs -->
+    <section id="ejercicios">
+      <div class="container">
+        <header class="section__header">
+          <p class="kicker">Práctica</p>
+          <h2 class="section__title">Ejercicios trabajados</h2>
+          <p class="section__desc prose">Explora los modelos formulados en clase. Cada pestaña contiene la estructura básica; agrega tus cálculos y tablas.</p>
+        </header>
+        <div class="card" style="animation-delay:.05s">
+          <div class="tabs" id="tabs">
+            <button class="tab active" data-pane="pane1">Herrero (PL)</button>
+            <button class="tab" data-pane="pane2">Bus Cali–Buga</button>
+            <button class="tab" data-pane="pane3">Confecciones</button>
+            <button class="tab" data-pane="pane4">Método Algebraico</button>
+            <button class="tab" data-pane="pane5">Simplex</button>
+          </div>
+          <div class="tabpanes">
+            <div class="pane active" id="pane1">
+                <div class="placeholder">
+                    <img class="img-fit" style="margin-top:-50px" src="resources/herrero.png" alt="Imagen alusiva a optimización o cadenas de suministro" loading="lazy" decoding="async"/>
+                </div>
+            </div>
+            <div class="pane" id="pane2">
+                <p class="subtle">Formulación con ingresos por asiento y límites de equipaje. Incluye restricción mínima de no fumadores.</p>
+                <div class="placeholder">
+                    <img class="img-fit" style="margin-top:-50px" src="resources/buga.png" alt="Imagen alusiva a optimización o cadenas de suministro" loading="lazy" decoding="async"/>
+                </div>
+            </div>
+            <div class="pane" id="pane3">
+                <p class="subtle">Balance entre producción y acabado con mínimos de pantalones y beneficios por unidad.</p>
+                <div class="placeholder">
+                    <img class="img-fit" style="margin-top:-50px" src="resources/confecciones.png" alt="Imagen alusiva a optimización o cadenas de suministro" loading="lazy" decoding="async"/>
+                </div>
+            </div>
+            <div class="pane" id="pane4">
+                <p class="subtle">Variables de holgura para convertir ≤ en igualdades y evaluar vértices.</p>
+                <div class="placeholder">
+                    <img class="img-fit" style="margin-top:-50px" src="resources/algebraico.png" alt="Imagen alusiva a optimización o cadenas de suministro" loading="lazy" decoding="async"/>
+                </div>
+            </div>
+            <div class="pane" id="pane5">
+                <p class="subtle">Tablas iterativas: selección de variable de entrada/salida y pivoteo.</p>
+                <div class="placeholder">
+                    <img class="img-fit" style="width:50%" src="resources/simplex.png" alt="Imagen alusiva a optimización o cadenas de suministro" loading="lazy" decoding="async"/>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conclusión -->
+    <section id="conclusion">
+      <div class="container">
+        <header class="section__header">
+          <p class="kicker">Cierre</p>
+          <h2 class="section__title">Conclusión</h2>
+        </header>
+        <div class="card card--narrow" style="animation-delay:.05s">
+          <p class="prose">La programación lineal ofrece un marco riguroso para decidir con eficiencia. El flujo general es:<br>
+            1) abstraer el problema<br>
+            2) formular el modelo<br>
+            3) resolverlo (álgebra o simplex)<br>
+            4) interpretar resultados y holguras<br>
+            5) comunicar conclusiones.</p>
+          <p class="subtle prose">Este portafolio resume los conceptos y deja plantillas para replicar el proceso en nuevos problemas.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© Unidad 1 – Investigación de Operaciones. Hecho con ♥ para repaso y estudio.</p>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Volver arriba">↑</button>
+
+  <script src="main.js"></script>
+</body>
+</html>
